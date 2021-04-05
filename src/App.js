@@ -12,15 +12,17 @@ import { SignIn } from "./components/SignIn";
 import { SignOut } from "./components/SignOut";
 import { ChatRoom } from "./components/ChatRoom";
 
+require("dotenv").config();
+
 if (!firebase.apps.length) {
   firebase.initializeApp({
-    apiKey: "AIzaSyAqqlRO1sY3lheSxravwcS9uzdun9LSI8I",
-    authDomain: "superchat-84bbf.firebaseapp.com",
-    projectId: "superchat-84bbf",
-    storageBucket: "superchat-84bbf.appspot.com",
-    messagingSenderId: "46686844012",
-    appId: "1:46686844012:web:3351cdc8218df175f8d449",
-    measurementId: "G-623VGPMNJT",
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId,
+    measurementId: process.env.measurementId,
   });
 } else {
   firebase.app(); // if already initialized, use that one
