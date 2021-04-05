@@ -1,7 +1,11 @@
-import React, { useRef, useState } from "react";
+import React from "react";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
 
 export const ChatMessage = (props) => {
-  const { text, uid, photoURL, auth } = props.message;
+  const { text, uid, photoURL } = props.message;
+  const auth = firebase.auth();
 
   const messageClass = uid === auth.currentUser.uid ? "sent" : "received";
 

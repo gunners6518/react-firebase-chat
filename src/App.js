@@ -31,18 +31,14 @@ const analytics = firebase.analytics();
 
 export const App = () => {
   const [user] = useAuthState(auth);
-  console.log(auth);
-
   return (
     <div className="App">
       <header>
         <h1>⚛️🔥💬</h1>
-        <SignOut auth={auth} />
+        <SignOut />
       </header>
 
-      <section>
-        {user ? <ChatRoom auth={auth} /> : <SignIn auth={auth} />}
-      </section>
+      <section>{user ? <ChatRoom /> : <SignIn />}</section>
     </div>
   );
 };
